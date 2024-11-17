@@ -1,0 +1,17 @@
+spring:
+cloud:
+gateway:
+routes:
+  - id : r1
+    uri : lb://CUSTOMERSERVICE
+    predicates :
+      - Path= /customers/**
+  - id : r2
+    uri : lb://INVANTORYSERVICE
+    predicates :
+      - Path= /products/**
+
+discovery:
+  enabled: false
+server:
+port: 8888
