@@ -22,6 +22,7 @@ public class CustomerServiceApplication {
                     .name("jilali").email("jilali@gmail.com").build());
             customerRepository.save(Customer.builder()
                     .name("Achraf").email("achraf@gmail.com").build());
+            System.out.println("Customers found with findAll():"+customerRepository.findAll());
 
         };
     };
