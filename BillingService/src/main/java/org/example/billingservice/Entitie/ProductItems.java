@@ -2,13 +2,16 @@ package org.example.billingservice.Entitie;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.billingservice.Model.Product;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
 public class ProductItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
