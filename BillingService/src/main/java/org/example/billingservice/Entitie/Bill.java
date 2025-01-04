@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Transient;
 import java.util.Date;
 @Entity @NoArgsConstructor @AllArgsConstructor
 @Data
+//class entity
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
