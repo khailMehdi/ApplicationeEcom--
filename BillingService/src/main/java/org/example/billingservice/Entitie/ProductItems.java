@@ -1,5 +1,6 @@
 package org.example.billingservice.Entitie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,13 +14,14 @@ import org.example.billingservice.Model.Product;
 @Data
 @Builder
 public class ProductItems {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private long productID;
-    private double price;
-    private double quantity;
+    private String productId;
+
+    private int quantity;
+    private double unitPrice;
     @ManyToOne
     private Bill bill;
     @Transient private Product product;
+
 }

@@ -28,7 +28,7 @@ public class BillingServiceApplication {
 
         return args -> {
 
-            Bill bill=new Bill();
+           Bill bill=new Bill();
             bill.setBillingDate(new Date());
             Customer customer=billRestFien.getCustomerById(1L);
             bill.setId(customer.getId());
@@ -38,7 +38,7 @@ public class BillingServiceApplication {
 
                 productRestFien.findAll().getContent().forEach( p->{
                     ProductItems product =new ProductItems();
-                    product.setProductID(p.getId());
+                    product.setId(p.getId());
                     product.setBill(bill);
                     product.setProduct(p);
                     product.setId(p.getId());

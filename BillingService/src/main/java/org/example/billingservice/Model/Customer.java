@@ -1,9 +1,10 @@
 package org.example.billingservice.Model;
 
-import lombok.Data;
+import lombok.*;
 
 
-@Data
+@Getter
+@Setter
 
 public class Customer {
     private Long id;

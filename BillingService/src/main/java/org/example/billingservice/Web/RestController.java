@@ -24,7 +24,7 @@ public class RestController {
         Bill bill=billRepository.findById(id).get();
         bill.setCustomer(billRestFien.getCustomerById(bill.getCustomer().getId()));
         bill.getProductItems().forEach(productItem -> {
-            productItem.setProduct(productRestFien.findProductById(productItem.getProductID()));
+            productItem.setProduct(productRestFien.findProductById(productItem.getId()));
         });
         return bill; }
 }
