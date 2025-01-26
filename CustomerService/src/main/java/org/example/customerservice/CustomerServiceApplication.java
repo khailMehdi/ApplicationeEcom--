@@ -1,5 +1,6 @@
 package org.example.customerservice;
 
+import org.example.customerservice.Web.ConfigRestControlor;
 import org.example.customerservice.Entities.Customer;
 import org.example.customerservice.Repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -13,8 +14,9 @@ public class CustomerServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(CustomerServiceApplication.class, args);
     }
+
     @Bean
-    CommandLineRunner commandLineRunner(CustomerRepository customerRepository){
+    CommandLineRunner commandLineRunner(CustomerRepository customerRepository , ConfigRestControlor configRestControlor ) {
         return args -> {
             customerRepository.save(Customer.builder()
                     .name("Mehdi").email("mehdi@gmail.com").build());
@@ -23,6 +25,7 @@ public class CustomerServiceApplication {
             customerRepository.save(Customer.builder()
                     .name("Achraf").email("achraf@gmail.com").build());
             System.out.println("Customers found with findAll():"+customerRepository.findAll());
+            System.out.println(configRestControlor.testConfig());
 
         };
     };
